@@ -1,0 +1,115 @@
+<div class="container" ng-init="init()">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<form ng-submit="addNew()">
+						<table class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>Nr. crt. al doc anex</th>
+									<th>Explicatii</th>
+									<th>Debitoare</th>
+									<th>Creditoare</th>
+									<th>Suma</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="transaction in transactions">
+									<td>
+										<input type="text" class="form-control" ng-model="transaction.no" />
+									</td>
+									<td>
+										<input type="text" class="form-control" ng-model="transaction.explicatii" />
+									</td>
+									<td>
+										<select ng-options="account as account.numarcont + ' - ' + account.nume for account in accounts" ng-model="transaction.debitoare"/>
+									</td>
+									<td>
+										<select ng-options="account as account.nume for account in accounts" ng-model="transaction.creditoare"/>
+									</td>
+									<td>
+										<div ng-if="personInvolved(transaction) == true">
+											<table class="table table-striped table-bordered">
+												<thead>
+													<tr>
+														<th>Persoana</th>
+														<th>Suma</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr ng-repeat="personTransaction in transaction.personTransactions">
+														<td>
+															<select ng-model="personTransaction.id">
+															<option ng-repeat="person in persons" ng-value="{{person.id}}">{{person.nume}}</option>
+															</select>
+															<!-- <select id="filterPerson" ng-options="account for account in accounts" ng-model="personTransaction.name"> -->
+																<!-- <option ng-repeat="person as person.nume for person in persons" ng-selected="account.selected" ng-model="personTransaction.name">{{personTransaction.name}}</option> -->
+															<!-- </select> -->
+														</td>
+														<td>
+															<input type="number" class="form-control" ng-model="personTransaction.suma" />
+														</td>
+													</tr>
+													<tr>
+														<td colspan="2">TOTAL: {{getTotal(transaction)}}</td>
+													</tr>
+												</tbody>
+											</table>
+											<div class="form-group">
+												<input type="button" class="btn btn-primary  pull-right" value="Adauga" ng-click="addNewPerson(transaction)"/>
+											</div>
+
+										</div>
+										<div ng-if = "personInvolved(transaction) == false">
+											<input type="text" class="form-control" ng-model="transaction.suma" />
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="form-group">
+							<!-- <input type="button" class="btn btn-danger pull-right" ng-click="remove()" value="Remove"/> -->
+							<input type="button" class="btn btn-primary pull-right" value="Salveaza" ng-click="save()"/>
+							<input type="button" class="btn btn-primary  pull-right" value="Adauga" ng-click="addNew()"/>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <script type="text/javascript"> -->
+
+<!-- $(document).ready(function () { -->
+
+	<!-- $("#filterPerson").select2(); -->
+	<!-- $("input").bind('keyup change', function () { -->
+		<!-- var $t = $(this); -->
+		<!-- var $par = $t.parent(); -->
+		<!-- var min = $t.attr("data-valid-min"); -->
+		<!-- var match = $t.attr("data-valid-match"); -->
+		<!-- var pattern = $t.attr("pattern"); -->
+
+		<!-- if (typeof match != "undefined") { -->
+			<!-- if ($t.val() != $('#' + match).val()) { -->
+				<!-- $par.removeClass('has-success').addClass('has-error'); -->
+			<!-- } else { -->
+				<!-- $par.removeClass('has-error').addClass('has-success'); -->
+			<!-- } -->
+		<!-- } else if (!this.checkValidity()) { -->
+			<!-- $par.removeClass('has-success').addClass('has-error'); -->
+		<!-- } else { -->
+			<!-- $par.removeClass('has-error').addClass('has-success'); -->
+		<!-- } -->
+
+		<!-- if ($par.hasClass("has-success")) { -->
+			<!-- $par.find('.form-control-feedback').removeClass('fade'); -->
+		<!-- } else { -->
+			<!-- $par.find('.form-control-feedback').addClass('fade'); -->
+		<!-- } -->
+
+	<!-- }); -->
+<!-- }); -->
+<!-- </script> -->

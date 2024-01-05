@@ -1,0 +1,83 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" type ="text/css" href="styles/main.css"/>
+  <!-- endbuild -->
+</head>
+
+<body ng-app="ngdemoApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+      <![endif]-->
+
+      <ul class="menu">
+        <li><a href="#/dummy">dummy</a></li>
+        <li><a href="#/user-list">user-list</a></li>
+        <li><a href="#/user-detail/1">user-detail/1</a></li>
+        <li><a href="#/user-creation">user-creation</a></li>
+        <li><a href="#/CAR">CAR</a></li>
+      </ul>
+
+      <!-- Add your site or application content here -->
+      <div class="container" ng-view=""></div>
+
+      <script src="bower_components/jquery/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular/angular-route/angular-route.js"></script>
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <!-- build:js scripts/plugins.js -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script> -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-alert.js"></script> -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script> -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script> -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-modal.js"></script> -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-transition.js"></script> -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-button.js"></script> -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-popover.js"></script> -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script> -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script> -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script> -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script> -->
+      <!-- <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script> -->
+      <!-- endbuild -->
+
+      <!-- build:js scripts/modules.js -->
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <!-- endbuild -->
+
+      <!-- build:js({.tmp,app}) scripts/scripts.js -->
+      <script src="scripts/app.js"></script>
+      <script src="scripts/services/services.js"></script>
+      <script src="scripts/controllers/controllers.js"></script>
+      <!-- endbuild -->
+	 
+	  <!-- <link href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.css" rel="stylesheet" /> -->
+	  <!-- <link href=" http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2-bootstrap.css" rel="stylesheet" /> -->
+<!-- <script src="https:/cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.min.js"></script> -->
+    </body>
+    </html>
